@@ -36,7 +36,7 @@ public class PlayerLook : MonoBehaviour
         _lookDirection += _lookInput * _lookSensitivityScaler;
         _lookDirection.y = Mathf.Clamp(_lookDirection.y, -_cameraClampDegrees, _cameraClampDegrees);
 
-        transform.localRotation = Quaternion.AngleAxis(_lookDirection.x, Vector3.up);
         _playerCamera.transform.localRotation = Quaternion.AngleAxis(-_lookDirection.y, Vector3.right);
+        transform.localRotation = Quaternion.AngleAxis(_lookDirection.x, Vector3.up);
     }
 }
