@@ -2,24 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon : MonoBehaviour
+public abstract class Weapon : MonoBehaviour
 {
-    public int _damage { get; private set; }
+    protected int damage;
 
-    private float _speed;
+    [SerializeField]
+    private int _weaponDamage;
 
-    private void Start()
+    protected void Start()
     {
-        
+        damage = _weaponDamage;
     }
 
-    private void Update()
-    {
-        
-    }
-
-    public void Attack()
+    protected void Update()
     {
 
     }
+
+    protected abstract void Select();
+    protected abstract void Attack();
+
 }

@@ -281,7 +281,7 @@ PrefabInstance:
     - target: {fileID: 7689060929263284193, guid: 0647e037149d4064a92195d5647fdc39,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -291,6 +291,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1462235523}
+    - targetCorrespondingSourceObject: {fileID: 7689060929263284193, guid: 0647e037149d4064a92195d5647fdc39,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1462235524}
   m_SourcePrefab: {fileID: 100100000, guid: 0647e037149d4064a92195d5647fdc39, type: 3}
 --- !u!1 &915693862
 GameObject:
@@ -663,6 +667,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1462235524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1462235521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31ea6431e38208244898f119c6970aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponDamage: 22
 --- !u!4 &1830083555 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7068073081659814645, guid: 92f50ffb990ca7d4eb9e066e4fa2d1b0,
