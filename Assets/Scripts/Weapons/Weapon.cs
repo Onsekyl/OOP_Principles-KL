@@ -31,6 +31,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected void Start()
     {
+        // Necessary way to do initialization for the setter check
         damage = _weaponDamage;
     }
 
