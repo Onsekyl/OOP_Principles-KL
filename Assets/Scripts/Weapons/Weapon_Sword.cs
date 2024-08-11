@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Weapon_Sword : Weapon
 {
-    protected override void Select()
+    protected override void OnEnable()
     {
-        
+        animator.SetTrigger("SelectSwordTrigger");
     }
     protected override void Attack()
     {

@@ -4,10 +4,12 @@ using UnityEngine;
 
 public abstract class Weapon : MonoBehaviour
 {
-    protected int damage;
-
     [SerializeField]
-    private int _weaponDamage;
+    protected Animator animator;
+    [SerializeField]
+    protected int _weaponDamage;
+
+    public int damage { get; protected set; }
 
     protected void Start()
     {
@@ -19,7 +21,7 @@ public abstract class Weapon : MonoBehaviour
 
     }
 
-    protected abstract void Select();
+    protected abstract void OnEnable();
     protected abstract void Attack();
 
 }
