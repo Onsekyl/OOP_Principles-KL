@@ -10,10 +10,21 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField]
     private float _movementSpeed;
+    [SerializeField]
+    private float _movementSpeedIncreaser;
 
     private void Update()
     {
         Move();
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            _movementSpeed += _movementSpeedIncreaser;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            _movementSpeed -= _movementSpeedIncreaser;
+        }
     }
 
     private void Move()
