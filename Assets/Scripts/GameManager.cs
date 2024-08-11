@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -24,16 +25,20 @@ public class GameManager : MonoBehaviour
 
     public void StartMenu()
     {
-
+        SceneManager.LoadScene(0);
     }
 
     public void StartGame()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     public void Exit()
     {
-
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        Application.Quit();
+#endif
     }
 }
