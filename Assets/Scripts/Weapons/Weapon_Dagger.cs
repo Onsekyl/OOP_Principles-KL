@@ -2,14 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Weapon_Sword : Weapon
+public class Weapon_Dagger : Weapon
 {
     protected override void OnEnable()
     {
-        animator.SetTrigger("SelectSwordTrigger");
+        animator.SetTrigger("SelectDaggerTrigger");
     }
     protected override void Attack()
     {
-        animator.SetTrigger("AttackSwordTrigger");
+        animator.SetTrigger("AttackDaggerTrigger");
     }
 }

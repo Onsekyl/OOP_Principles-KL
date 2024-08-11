@@ -512,6 +512,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1191954066}
+    - targetCorrespondingSourceObject: {fileID: 7510719637350494482, guid: 7717005b00f11964aba1410f10ac4b68,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1191954067}
   m_SourcePrefab: {fileID: 100100000, guid: 7717005b00f11964aba1410f10ac4b68, type: 3}
 --- !u!4 &1191954064 stripped
 Transform:
@@ -546,6 +550,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1191954067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191954065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7f15f2e4156665241b7f9626e6a2db23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1191954066}
+  _weaponDamage: 35
 --- !u!1001 &1374545132
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -622,6 +640,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1374545135}
+    - targetCorrespondingSourceObject: {fileID: 1538560452320521662, guid: ee60037dcc5b7a14bb275549cf73263c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1374545136}
   m_SourcePrefab: {fileID: 100100000, guid: ee60037dcc5b7a14bb275549cf73263c, type: 3}
 --- !u!4 &1374545133 stripped
 Transform:
@@ -656,6 +678,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1374545136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374545134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36ae1648bdf63994d813405d42fd91db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1374545135}
+  _weaponDamage: 15
 --- !u!1 &1462235521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7689060929263284193, guid: 0647e037149d4064a92195d5647fdc39,
