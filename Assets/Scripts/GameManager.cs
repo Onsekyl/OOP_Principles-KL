@@ -6,20 +6,20 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager instance { get; private set; }
 
     // https://gamedevbeginner.com/singletons-in-unity-the-right-way/
     private void Awake()
     {
         // If there is an instance, and it's not me, delete myself.
 
-        if (Instance != null && Instance != this)
+        if (instance != null && instance != this)
         {
             Destroy(this);
         }
         else
         {
-            Instance = this;
+            instance = this;
         }
     }
 

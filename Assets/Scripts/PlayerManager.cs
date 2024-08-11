@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Escape))
         {
             Cursor.lockState = CursorLockMode.None;
-            GameManager.Instance.StartMenu();
+            GameManager.instance.StartMenu();
         }
     }
 }
