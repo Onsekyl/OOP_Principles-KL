@@ -13,7 +13,9 @@ public class PlayerLook : MonoBehaviour
     private float _lookInputY;
 
     [SerializeField]
-    private float _lookSensitivity;
+    private float _cameraClampDegrees;
+    [SerializeField]
+    private float _lookSensitivityScaler;
 
     private void Start()
     {
@@ -31,10 +33,10 @@ public class PlayerLook : MonoBehaviour
         _lookInputY = Input.GetAxisRaw("Mouse Y");
         _lookInput = new Vector2(_lookInputX, _lookInputY);
 
-        _lookDirection += _lookInput;
+        _lookDirection += _lookInput * _lookSensitivityScaler;
+        _lookDirection.y = Mathf.Clamp(_lookDirection.y, -_cameraClampDegrees, _cameraClampDegrees);
 
-        transform.localRotation = Quaternion.AngleAxis(_lookDirection.x * _lookSensitivity, Vector3.up);
-        _playerCamera.transform.localRotation = Quaternion.AngleAxis(-_lookDirection.y * _lookSensitivity, Vector3.right);
-
+        transform.localRotation = Quaternion.AngleAxis(_lookDirection.x, Vector3.up);
+        _playerCamera.transform.localRotation = Quaternion.AngleAxis(-_lookDirection.y, Vector3.right);
     }
 }
