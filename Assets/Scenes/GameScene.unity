@@ -456,6 +456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 3
+  _lookSensitivity: 10
 --- !u!4 &2051445072
 Transform:
   m_ObjectHideFlags: 0
