@@ -10,6 +10,9 @@ public class Weapon_Dagger : Weapon
     }
     protected override void Attack()
     {
-        animator.SetTrigger("AttackDaggerTrigger");
+        if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Idle_Dagger")
+        {
+            animator.SetTrigger("AttackDaggerTrigger");
+        }
     }
 }

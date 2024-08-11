@@ -18,7 +18,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButton("Fire1"))
         {
             Attack();
         }

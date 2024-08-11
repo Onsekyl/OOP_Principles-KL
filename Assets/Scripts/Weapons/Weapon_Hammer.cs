@@ -10,6 +10,9 @@ public class Weapon_Hammer : Weapon
     }
     protected override void Attack()
     {
-        animator.SetTrigger("AttackHammerTrigger");
+        if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Idle_Hammer")
+        {
+            animator.SetTrigger("AttackHammerTrigger");
+        }
     }
 }

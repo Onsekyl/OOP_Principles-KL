@@ -10,6 +10,9 @@ public class Weapon_Sword : Weapon
     }
     protected override void Attack()
     {
-        animator.SetTrigger("AttackSwordTrigger");
+        if (animator.GetCurrentAnimatorClipInfo(0)[0].clip.name == "Idle_Sword")
+        {
+            animator.SetTrigger("AttackSwordTrigger");
+        }
     }
 }
