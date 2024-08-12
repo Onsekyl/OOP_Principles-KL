@@ -32,14 +32,18 @@ public class Dummy : MonoBehaviour
 
     public void ReceiveDamage(int damage)
     {
-        _dummyHealth -= damage;
-
-        if (_dummyHealth <= 0)
+        if (_dummyHealth > 0)
         {
-            StartCoroutine(DespawnRespawn());
-        }
+            _dummyHealth -= damage;
 
-        _dummyAnim.SetTrigger("HitTrigger");
+            if (_dummyHealth <= 0)
+            {
+                StartCoroutine(DespawnRespawn());
+            }
+
+            // https://docs.unity3d.com/ScriptReference/Animator.Play.html
+            _dummyAnim.Play("Base Layer.pushed", -1, 0);
+        }
     }
 
     IEnumerator DespawnRespawn()
