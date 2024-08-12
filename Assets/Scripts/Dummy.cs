@@ -7,11 +7,14 @@ public class Dummy : MonoBehaviour
     [SerializeField]
     private Animator _dummyAnim;
     [SerializeField]
+    private float _dummyDespawnWaitSeconds = 4.0f;
+
     private int _dummyHealth = 100;
+    public static WaitForSeconds _dummyDespawnWait;
 
     private void Start()
     {
-
+        _dummyDespawnWait = new WaitForSeconds(_dummyDespawnWaitSeconds);
     }
 
     private void Update()
@@ -31,26 +34,18 @@ public class Dummy : MonoBehaviour
     {
         _dummyHealth -= damage;
 
-        Debug.Log(damage + " damage received!");
-
         if (_dummyHealth <= 0)
         {
-            Die();
+            StartCoroutine(DespawnRespawn());
         }
 
-        if (_dummyAnim != null)
-        {
-            // https://docs.unity3d.com/ScriptReference/Animator.Play.html
-            _dummyAnim.Play("Base Layer.pushed", 0, 0);
-        }
-        else
-        {
-            Debug.Log("Animator not assigned!");
-        }
+        _dummyAnim.SetTrigger("HitTrigger");
     }
 
-    private void Die()
+    IEnumerator DespawnRespawn()
     {
-
+        _dummyAnim.SetTrigger("DieTrigger");
+        yield return _dummyDespawnWait;
+        Destroy(gameObject);
     }
 }
