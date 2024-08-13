@@ -104,8 +104,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5360683131785772904}
-  - component: {fileID: 5615497917579445399}
   - component: {fileID: 1624912590108446361}
+  - component: {fileID: 5615497917579445399}
   - component: {fileID: 2599244321664972382}
   m_Layer: 0
   m_Name: training_dummy
@@ -131,6 +131,22 @@ Transform:
   - {fileID: 334251544987690374}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1624912590108446361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697017240656324050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e578b04487deed4180269b6c52180df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _dummySpawner: {fileID: 4959372364206726957, guid: 7a1ec0c593f97e5429a4811dfaca21d9,
+    type: 3}
+  _dummyAnim: {fileID: 5615497917579445399}
+  _dummyDespawnWaitSeconds: 4
 --- !u!95 &5615497917579445399
 Animator:
   serializedVersion: 5
@@ -152,20 +168,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1624912590108446361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4697017240656324050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e578b04487deed4180269b6c52180df, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _dummyAnim: {fileID: 5615497917579445399}
-  _dummyHealth: 100
 --- !u!136 &2599244321664972382
 CapsuleCollider:
   m_ObjectHideFlags: 0

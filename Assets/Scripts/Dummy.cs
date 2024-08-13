@@ -9,17 +9,14 @@ public class Dummy : MonoBehaviour
     [SerializeField]
     private float _dummyDespawnWaitSeconds = 4.0f;
 
+    private DummySpawner _dummySpawner;
+    private WaitForSeconds _dummyDespawnWait;
     private int _dummyHealth = 100;
-    public static WaitForSeconds _dummyDespawnWait;
 
-    private void Start()
+    private void Awake()
     {
         _dummyDespawnWait = new WaitForSeconds(_dummyDespawnWaitSeconds);
-    }
-
-    private void Update()
-    {
-
+        _dummySpawner = GameObject.Find("DummySpawner").GetComponent<DummySpawner>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -38,18 +35,18 @@ public class Dummy : MonoBehaviour
 
             if (_dummyHealth <= 0)
             {
-                StartCoroutine(DespawnRespawn());
+                StartCoroutine(DummyDeath());
             }
 
             // https://docs.unity3d.com/ScriptReference/Animator.Play.html
-            _dummyAnim.Play("Base Layer.pushed", -1, 0);
+            _dummyAnim.Play("Base Layer.pushed", -1, 0); 
         }
     }
 
-    IEnumerator DespawnRespawn()
+    IEnumerator DummyDeath()
     {
         _dummyAnim.SetTrigger("DieTrigger");
         yield return _dummyDespawnWait;
-        Destroy(gameObject);
+        _dummySpawner.DespawnRespawn(gameObject);
     }
 }
