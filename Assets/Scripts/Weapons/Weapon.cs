@@ -10,7 +10,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected int _weaponDamage;
 
-    protected DamageDisplayer _damageDisplayer;
+    protected GameObject _player;
 
     public int damage
     {
@@ -33,7 +33,7 @@ public abstract class Weapon : MonoBehaviour
 
     protected void Start()
     {
-        _damageDisplayer = gameObject.transform.parent.GetComponent<DamageDisplayer>();
+        _player = gameObject.transform.parent.transform.parent.gameObject;
         // Necessary way to do initialization for the setter check
         damage = _weaponDamage;
     }
@@ -50,7 +50,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (other.CompareTag("Enemy"))
         {
-            _damageDisplayer.DisplayDamage(damage);
+            
         }
     }
 
