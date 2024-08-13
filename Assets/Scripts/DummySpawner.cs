@@ -32,7 +32,5 @@ public class DummySpawner : MonoBehaviour
 
         yield return _dummyRespawnWait;
         Instantiate(_dummyPrefab, spawnPos, spawnRot);
-        
-        Debug.Log("Script ends.");
     }
 }
