@@ -15,11 +15,6 @@ public class DamageDisplayer : MonoBehaviour
         _damageTxt = _damageTxtPrefab.GetComponent<TextMeshProUGUI>();
     }
 
-    private void Update()
-    {
-        
-    }
-
     public void DisplayDamage(int damageToDisplay, GameObject receiverEnemy)
     {
         if (receiverEnemy.GetComponent<Dummy>().dummyHealth > 0)

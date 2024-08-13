@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    // ENCAPSULATION
     public static GameManager instance { get; private set; }
 
     // https://gamedevbeginner.com/singletons-in-unity-the-right-way/

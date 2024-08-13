@@ -25,6 +25,7 @@ public class Dummy : MonoBehaviour
     {
         if (other.CompareTag("Weapon"))
         {
+            // ABSTRACTION
             ReceiveDamage(other.GetComponent<Weapon>().damage);
         }
     }

@@ -24,6 +24,7 @@ public class PlayerLook : MonoBehaviour
 
     private void Update()
     {
+        // ABSTRACTION
         Look();
     }
 

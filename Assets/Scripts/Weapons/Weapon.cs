@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// INHERITANCE
 public abstract class Weapon : MonoBehaviour
 {
     [SerializeField]
@@ -11,6 +12,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField]
     protected DamageDisplayer _damageDisplayer;
 
+    // ENCAPSULATION
     public int damage
     {
         get
@@ -40,6 +42,7 @@ public abstract class Weapon : MonoBehaviour
     {
         if (Input.GetButton("Fire1"))
         {
+            // ABSTRACTION
             Attack();
         }
     }

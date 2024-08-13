@@ -20,6 +20,7 @@ public class PlayerWeaponManager : MonoBehaviour
         if (Input.GetKey(KeyCode.Alpha1))
         {
             _currentWeaponIndex = 0;
+            // ABSTRACTION
             SelectWeapon();
         }
         else if (Input.GetKey(KeyCode.Alpha2))
