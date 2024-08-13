@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Dummy : MonoBehaviour
 {
+    public int dummyHealth { get; private set; }
+
     [SerializeField]
     private Animator _dummyAnim;
     [SerializeField]
@@ -11,10 +13,10 @@ public class Dummy : MonoBehaviour
 
     private DummySpawner _dummySpawner;
     private WaitForSeconds _dummyDespawnWait;
-    private int _dummyHealth = 100;
 
     private void Awake()
     {
+        dummyHealth = 100;
         _dummyDespawnWait = new WaitForSeconds(_dummyDespawnWaitSeconds);
         _dummySpawner = GameObject.Find("DummySpawner").GetComponent<DummySpawner>();
     }
@@ -29,11 +31,11 @@ public class Dummy : MonoBehaviour
 
     public void ReceiveDamage(int damage)
     {
-        if (_dummyHealth > 0)
+        if (dummyHealth > 0)
         {
-            _dummyHealth -= damage;
+            dummyHealth -= damage;
 
-            if (_dummyHealth <= 0)
+            if (dummyHealth <= 0)
             {
                 StartCoroutine(DummyDeath());
             }

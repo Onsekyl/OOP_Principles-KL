@@ -6,9 +6,10 @@ public abstract class Weapon : MonoBehaviour
 {
     [SerializeField]
     protected Animator animator;
-
     [SerializeField]
     protected int _weaponDamage;
+    [SerializeField]
+    protected DamageDisplayer _damageDisplayer;
 
     public int damage
     {
@@ -40,6 +41,14 @@ public abstract class Weapon : MonoBehaviour
         if (Input.GetButton("Fire1"))
         {
             Attack();
+        }
+    }
+
+    protected void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            _damageDisplayer.DisplayDamage(damage, other.gameObject);
         }
     }
 
